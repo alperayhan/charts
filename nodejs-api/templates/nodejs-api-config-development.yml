@@ -1,0 +1,10 @@
+{{- if eq .Values.branch "development" -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nodejs-api-development
+data: 
+  NODE_ENV : "development"
+  
+
+{{- end }}

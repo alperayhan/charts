@@ -1,0 +1,18 @@
+replicaCount: 1
+branch: development
+containerPort: 8000
+image:
+  repository: harbor.medianova.com/nodejs-api/nodejs-api
+  pullPolicy: IfNotPresent
+  tag: ""
+nginximage:
+  tag: ""
+imagePullSecrets: harborsecret
+service:
+  metadata:
+    name: nodejs-api
+  spec:
+    selector:
+      app: nodejs-api  
+  type: ClusterIP
+  port: 8000

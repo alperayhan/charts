@@ -1,0 +1,8 @@
+{{- if eq .Values.branch "main" -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nodejs-api-main
+data: 
+  NODE_ENV : "main"
+{{- end }}
